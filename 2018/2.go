@@ -1,0 +1,311 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println("December 2nd, 2018")
+
+	input := `ovfclbidieyujztrswxmckgnaw
+pmfqlbimheyujztrswxmckgnap
+ovfqlbidhetujztrswxmcfgnas
+gvfqebddheyujztrswxmckgnap
+ovfqlbidheyejztrswxqekgnap
+ovzqlbiqheyujztsswxmckgnap
+oofqlbidhoyujztoswxmckgnap
+ovfqlbicqeyujztrswxmckgncp
+ovfelbidheyujltrswxmcwgnap
+ovfqlbidheyujzerswxmchgnaf
+bvfqlbidheyxjztnswxmckgnap
+ovfqlbidheyugztrswamnkgnap
+ovfqxbidheyujrtrswxmckgbap
+ovfqlbidheyujztrdwxqckgjap
+ovfqebiqheyujztrscxmckgnap
+avfqlbidheyvjztkswxmckgnap
+ovfqlbidheyujktrswxvskgnap
+ovfqlbidheeujztrswrmckgnae
+ovaqlbidheydjztrswxmchgnap
+ovfqlbodweyujztpswxmckgnap
+xvfqlbidhmyujztrswxmykgnap
+ovfqlnidheyujztxswumckgnap
+ovfqlbidhexujztrswxyckgeap
+ovfqlkidhekubztrswxmckgnap
+ovfqlbidheysjzkrsxxmckgnap
+oxfqebidheyujzprswxmckgnap
+ovfqlbidhetujztrswmmckghap
+ovfclbidhuyujztrswrmckgnap
+ovfqlbijhdyujztrswxmcvgnap
+ovfqlkidhyyujztrswxvckgnap
+ovfqlbiehlyujztrswxhckgnap
+ovfqlbidheyxjjtrsdxmckgnap
+jvfqlbidheyujztrvwxmckcnap
+ovfvlbidheyujzhrswxmckgnzp
+ovfqnbidhuyujztrswfmckgnap
+ovfrlbidheyujztpswxmckgnat
+ovfqpbidheyujztrywxmcngnap
+ovfqlbidheyumrtrswpmckgnap
+ovfqlbidhoyzjztrswxmckgkap
+ovfqlbibheyuhztrswxmskgnap
+ovfqlbidheybjzfrswxkckgnap
+ovfqnbinheyujztrawxmckgnap
+ovfqlbidheyujztryxxmckgnao
+ovfqzbidheyujztrsuxmckgnpp
+ovfqlbidherujztrswxmckgjsp
+ovfqlbidheyujhtrywxmckgtap
+oofmlbidheyujftrswxmckgnap
+ovfqlbidhhyujztrawxmckgnbp
+ovfqlbidheyujztrswxeckmnae
+lvfqlbidheyujztrswxzckvnap
+ovfqlbidheyujztrswxmckqnfr
+offqlbidheyrjztrswxmwkgnap
+ovnqlbidzeyujztmswxmckgnap
+ovfxlbxdheyujztrawxmckgnap
+ovfqmbidheyujztrsaxwckgnap
+ovfqlbidhryzjztrswxmckgcap
+offqlbidheyujnthswxmckgnap
+ogmqlbimheyujztrswxmckgnap
+ovfqlbidheyulztkswxockgnap
+ovfqlbidheyujjtrswxmckypap
+ovfqibidheypjztrswxmskgnap
+ovfqlbwdhyyujztrswxmckgnnp
+ovfqlbidheyujztsvwxmckgkap
+odfqlbidoeyujztrswxjckgnap
+ovfqlbodpeyujztrswxmcggnap
+ovfqlbicheyujztrhwxmcagnap
+ovfqlbidheyuaztrgwxmckhnap
+ovfwlbidhyyujztrswtmckgnap
+ovfqlbidgzyujztrswxmckgcap
+ovnqlbcdheyujztrswxmckgnup
+ovfqlbieheyujrtrsdxmckgnap
+ovfqlbidkeyujztrswfmckgnqp
+ovfqlbidtekujztrswxsckgnap
+ovfklbedheyujztrscxmckgnap
+ovfqltivhnyujztrswxmckgnap
+ovfqlbidheyuvuyrswxmckgnap
+ovfqlbidheyjjrtrcwxmckgnap
+ojfqlbidheyujztrswxmckguvp
+ovfqlbidheiqjqtrswxmckgnap
+ivfqlfidheyujatrswxmckgnap
+cvfqlbidheyujgtrswxmckgnrp
+ovfclbidheeujztrswxmckgnaw
+ovfqlbhdheyujztrswvmcklnap
+ovfqcbidheyvjztaswxmckgnap
+ovgqlbijheyujztrswxvckgnap
+gvfqlbidheyujvtrswxmckgnaj
+ovfqlbidheyujztrdwxmcggnvp
+cvfqlbidheyujgtrswxmckqnap
+ovfqlbrdheyqjztrswxmckgnaj
+ovfqlbidheyujzjrswbmcrgnap
+ovfqlbvdheyujxtrswxvckgnap
+ovaqlbidheyujctrswxmbkgnap
+ovfqlbidheyujztgdwxvckgnap
+ovfqlbidhevujztrssxmwkgnap
+rvfqlbidheyujztrzwxmckhnap
+ovfqmbidheysjztrswxmikgnap
+ovfqlbidheiujztrsdxuckgnap
+ovfqlbidheyveztrswxmckgnah
+ovfqnbiaheytjztrswxmckgnap
+ovfqlbidnayujhtrswxmckgnap
+ovfqlbidheyujztnswxdckgnag
+ovfqlbidheyuyztrswxmzzgnap
+ovfqlbiohexujzthswxmckgnap
+lvfqlbidheyujztcswxxckgnap
+ovuqlbidhfxujztrswxmckgnap
+ovfqluidheyujotrswxmrkgnap
+ovfalbidheyujztrswxhckgngp
+ohjqlbidheyujztrswumckgnap
+ovfqxbidhecujztrspxmckgnap
+ovfqcbidheyusztrpwxmckgnap
+fvfwlbidheyujztrswxmcxgnap
+ovfqlbidhxyplztrswxmckgnap
+ovfqlbidheyujftrswxdckgrap
+ovfqlepdheyujztrswxmckgnjp
+ojjqlbidhuyujztrswxmckgnap
+ovfqlbwdheyujztrswxmcggeap
+ovfqlbidheyujltrscxkckgnap
+oifqibidheyujztrswxjckgnap
+ovfqlbigheyujztrswdmcqgnap
+ovfqlbieheyujztrswxzzkgnap
+ovfqlbidheyujztrswmmcgbnap
+ovfqlbidhnyujzerswxmkkgnap
+ovfqdbinheyujztrswxeckgnap
+oveqlbidheyujztrswhmckgnab
+ovfqkbytheyujztrswxmckgnap
+ovfqlbidheyujstsswxmcklnap
+ovfimbidheyujztrewxmckgnap
+ovfqebidhequjztrnwxmckgnap
+ovfqlbidheyukztrswxmckunwp
+oifqlbidheyuwztrswxmckgnao
+ovfqlbidweyufztrswxmckgtap
+evfqlbidheyujztrswxsckvnap
+svbqlbidheyujztrsaxmckgnap
+ovfqlbidheyaoztrswxmckjnap
+ovfqllidheyujztrswxmckynhp
+ohfqlbidheyujatrswtmckgnap
+omfjlfidheyujztrswxmckgnap
+xvfqlbidheyujutrswxvckgnap
+ovfqlbidheyukztsswxmzkgnap
+ovfqibidhehujztrswxeckgnap
+ovfqlbydheyuoztrswxmcygnap
+ovfqlbidheyufztrmwxmckvnap
+ovfqrbkdheyujztrswxmckgnaq
+ovfqlbigheyuyztrswxmckgzap
+ovfqlbidheyujztrsjxmcnnnap
+uvfqlbipheyujztrswxmckgnay
+ovfqlbddneyujbtrswxmckgnap
+tvfqlbidheyujztrswxpckgeap
+ovfqlbidheyuiztrhwxmckznap
+ovfqlbidheyujzteswxvckgvap
+avfqlbidheyijzlrswxmckgnap
+oqfqmbidheyujvtrswxmckgnap
+ovnqlbidneyujztrswxmckxnap
+ovfqlbidfeyujztrswxqckgncp
+ovfaybidheyujztrswxrckgnap
+ovfqlbidhemujzarnwxmckgnap
+ovfqlwidheyujctrsfxmckgnap
+ovtelbidheysjztrswxmckgnap
+ovfqlbidheyujztrswsmchunap
+pvfqlbidheyulztrswxmckynap
+ovfqlbzdhezujztfswxmckgnap
+ozfqibidheyujztrhwxmckgnap
+ovfqlbioheycjztmswxmckgnap
+ovfqleidheyujztoswxmckgnhp
+ovfqlcidhejujztrswnmckgnap
+eqfqlbidheyujztrswxmrkgnap
+ovfqlbitheywjztrmwxmckgnap
+ovfqlbidheyujptrswnmcggnap
+oofqlbidhjyujztrswxmcegnap
+ovfqlbidmeyujztrswxmcxgnxp
+ovjhlbidhefujztrswxmckgnap
+ovfqlbidkeyujzarswxmcugnap
+hvyqlridheyujztrswxmckgnap
+ovfqlbidheyujxtrswqmckgnpp
+ovfqlbidheyuiztrtsxmckgnap
+ovfqlbidqeyuuztrbwxmckgnap
+ovfqpbidheyujztrswxwekgnap
+ovfqltidheyujztrbwxmckgnab
+okfxluidheyujztrswxmckgnap
+ovfplbidheyujztrsaxmckgnax
+wvfqlbidheiujztrswxjckgnap
+ovfqlbidheyqjzlrsqxmckgnap
+ovfqlbadheyujztrsxxmckgnop
+ovfqliidheyujzerswvmckgnap
+ovlrlbidheyujztaswxmckgnap
+cvzqlbidheyujgtrswxmckqnap
+ovfqlbidheyujzuqswxmckgnnp
+ovfqlsjdheyujztrswxmcklnap
+ovrqlbidheyujztrssrmckgnap
+ovcqlbidheyujztrsmxmcognap
+ovcqlbidheyjjztrswxmckunap
+ovfilbrdhnyujztrswxmckgnap
+ovfqlbodheyujztrswxeckqnap
+ovfqlbidhuyujqtrswxdckgnap
+ovmqlbidheyujderswxmckgnap
+ovfylbidheyajzrrswxmckgnap
+ovfklbidhtyujzjrswxmckgnap
+rvfqlbidheyujztcswxcckgnap
+ovfnlyidheyuwztrswxmckgnap
+ovfqlbidhexujztrswxmpktnap
+ovfplbidheyfjztrswhmckgnap
+oyfqlbidmexujztrswxmckgnap
+mvfqlbidhcyujztrawxmckgnap
+ovfqlbidhqyujdtrswxmcbgnap
+ovfqjbidheybjrtrswxmckgnap
+ozfqlbidhbyujztrswxmckgpap
+okfqlbidheyujztrmwxmckhnap
+ovfqlbydheyujzrrswxnckgnap
+ovfqtbidheycjztrswxmckgnah
+avfqloidheyujztrswxyckgnap
+ovfqlbldteyujzyrswxmckgnap
+ovfqlbpdhedujztpswxmckgnap
+ovfqlbidheyujztrswxucrvnap
+ocnqlbidheyujztrswxmwkgnap
+ovfqlvidheyujztrswkmckgnlp
+evfqlbidheyujzmrswqmckgnap
+ovfqlbidhryujztrcwxmekgnap
+ovfqlbvdheyujztrzwxmcxgnap
+ovfqlridgeyujztrswxmkkgnap
+yvfqlbidheyujzthswzmckgnap
+ovfqlbidheyujmtrswxyukgnap
+ovfqlbidheqgjztrswdmckgnap
+dvfzlcidheyujztrswxmckgnap
+jvfqlbidheyujztrswxmczgnae
+ovfqlbzdheyujztrswxyckgnjp
+ovfqlbxdheyujatrswxmcqgnap
+ovftlbldheyujztrewxmckgnap
+owfqlbitheyujzyrswxmckgnap
+ovfqlbidheyujztrswxmchgtvp
+ovfqibidheyujzttswxmkkgnap
+ovkqlbodheyujztvswxmckgnap
+onfqlbbdheyujztrxwxmckgnap
+ovfqlbidyeysgztrswxmckgnap
+ovfqlbixherujztrswxmcngnap
+ovlqlbidfeyujztrswxgckgnap
+ovfqlbfdheyujztwswumckgnap
+ovfqlbidheeujztrswxmckgkah
+ovfqtbqdheyujztrswmmckgnap
+bbfqlbigheyujztrswxmckgnap
+ovfqljidheyujztrswxmwkgnip
+ovfqobidheyujztrsvxmmkgnap
+ovfqlbidheydjvtrswxmckanap
+ovfqlxidheyujztrswgmckgnep
+jvfqlbidhzyujztrswxmckgnay
+ovfqlbidhkyujztrswxmlkenap
+ovfqobidheyujztrswxmckjnaf
+ovfxlbidheyujztrswxmcbgnac
+ovfqcbidhtyujztrswxmckqnap
+ozfglbidheyujzvrswxmckgnap
+ovfqlbidheyujztoswxyckcnap`
+
+	ids := strings.Split(input, "\n")
+	twice := 0
+	thrice := 0
+	for _, id := range ids {
+		letters := map[rune]int{}
+
+		for _, letter := range id {
+			letters[letter] = letters[letter] + 1
+		}
+
+		for letter := range letters {
+			if letters[letter] == 2 {
+				twice++
+				break
+			}
+		}
+		for letter := range letters {
+			if letters[letter] == 3 {
+				thrice++
+				break
+			}
+		}
+	}
+	fmt.Printf("Result (part 1): %d\n", twice*thrice)
+
+	newID := ""
+Loop:
+	for i, id1 := range ids {
+		for j, id2 := range ids {
+			if i == j {
+				break
+			}
+
+			newID = ""
+			differences := 0
+			for i := range id1 {
+				if id1[i] != id2[i] {
+					differences++
+				} else {
+					newID += string(id1[i])
+				}
+			}
+
+			if differences == 1 {
+				break Loop
+			}
+		}
+	}
+	fmt.Printf("Result (part 2): %s\n", newID)
+}
