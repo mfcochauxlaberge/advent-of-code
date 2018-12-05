@@ -10,4 +10,4 @@ Your editor or Go might complain because the main function is redeclared in each
 
 Example:
 
-`go run 2017/1.go`
+`go run 2017/01/01.go`
