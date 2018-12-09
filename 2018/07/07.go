@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -125,10 +126,21 @@ Step O must be finished before step Q can begin.`)
 		stp := strings.Split(lines[i], " ")[7]
 
 		if _, ok := steps[stp]; !ok {
-			steps[stp] = step{name: stp}
+			// s:=fmt.Sprintf("%x", stp)
+			t, _ := strconv.ParseInt(fmt.Sprintf("%x", stp), 16, 64)
+			t -= 4
+			steps[stp] = step{
+				name: stp,
+				time: int(t),
+			}
 		}
 		if _, ok := steps[dep]; !ok {
-			steps[dep] = step{name: dep}
+			t, _ := strconv.ParseInt(fmt.Sprintf("%x", stp), 16, 64)
+			t -= 4
+			steps[dep] = step{
+				name: dep,
+				time: int(t),
+			}
 		}
 
 		stepstruct := steps[stp]
@@ -179,38 +191,20 @@ Step O must be finished before step Q can begin.`)
 	executed = []string{}
 	e = 0
 	keepGoing = true
+	timeline := map[int][5]struct {
+		ongoing  string
+		timeleft int
+	}{}
+	s := 0
+	done := []string{}
 	for keepGoing {
 		keepGoing = false
-		// timeline = append(timeline, []string{})
 		for name, step := range todos {
 			if len(step.deps) == 0 {
 				avalaible = append(avalaible, name)
 				delete(todos, name)
-				fmt.Printf("%s can be executed.\n", name)
 			}
-			// fmt.Printf("Step: %+v\n", step)
 		}
-		sort.Strings(avalaible)
-		if len(avalaible) >= 1 {
-			executed = append(executed, avalaible[0])
-			for name, step := range todos {
-				for _, ex := range executed {
-					for j := 0; j < len(step.deps); j++ {
-						if avalaible[0] == step.deps[j] {
-							step.deps = append(step.deps[:j], step.deps[j+1:]...)
-							j--
-							keepGoing = true
-							fmt.Printf("Dependency %s on %s has been resolved.\n", ex, step.name)
-						}
-					}
-				}
-				steps[name] = step
-			}
-			avalaible = avalaible[1:]
-		}
-
-		// sort.Strings(timeline[e])
-		e++
 	}
 	res = ""
 	for _, name := range executed {
@@ -222,4 +216,5 @@ Step O must be finished before step Q can begin.`)
 type step struct {
 	name string
 	deps []string
+	time int
 }
