@@ -8,17 +8,19 @@ import (
 func main() {
 	fmt.Println("December 8th, 2018")
 
-	input := []byte(``)
-	// 	input := []byte(`1, 1
-	// 1, 6
-	// 8, 3
-	// 3, 4
-	// 5, 5
-	// 8, 9`)
+	// input := []byte(``)
+	input := []byte(`2 3 0 3 10 11 12 1 1 0 1 99 2 1 1 2`)
 
-	lines := strings.Split(string(input), "\n")
-	for i := 0; i < len(lines); i++ {
-
+	nums := strings.Split(string(input), "\n")
+	root := node{
+		children: []node{},
+	}
+	for i := 0; i < len(nums); i++ {
+		header:=
 	}
 	fmt.Printf("Result (part 1): Unknow (tbd from the areas)\n")
+}
+
+type node struct {
+	children []node
 }
