@@ -338,14 +338,88 @@ func main() {
 -20311, -20298/ 2,  2
 -10098,  10375/ 1, -1
  30849, -50978/-3,  5`)
+	// 	input := []byte(` 9,  1/ 0,  2
+	//  7,  0/-1,  0
+	//  3, -2/-1,  1
+	//  6, 10/-2, -1
+	//  2, -4/ 2,  2
+	// -6, 10/ 2, -2
+	//  1,  8/ 1, -1
+	//  1,  7/ 1,  0
+	// -3, 11/ 1, -2
+	//  7,  6/-1, -1
+	// -2,  3/ 1,  0
+	// -4,  3/ 2,  0
+	// 10, -3/-1,  1
+	//  5, 11/ 1, -2
+	//  4,  7/ 0, -1
+	//  8, -2/ 0,  1
+	// 15,  0/-2,  0
+	//  1,  6/ 1,  0
+	//  8,  9/ 0, -1
+	//  3,  3/-1,  1
+	//  0,  5/ 0, -1
+	// -2,  2/ 2,  0
+	//  5, -2/ 1,  2
+	//  1,  4/ 2,  1
+	// -2,  7/ 2, -2
+	//  3,  6/-1, -1
+	//  5,  0/ 1,  0
+	// -6,  0/ 2,  0
+	//  5,  9/ 1, -2
+	// 14,  7/-2,  0
+	// -3,  6/ 2, -1`)
 
-	numSeconds := int64(3)
-	ongoing := 0
+	// numSeconds := int64(3)
 	work := make(chan bool)
-	for s := int64(0); s <= numSeconds; s++ {
-		work<-
+	// for s := int64(0); s <= numSeconds; s++ {
+	// go buildImageAndSave(string(input), 10220, work)
+	// go buildImageAndSave(string(input), 10221, work)
+	// go buildImageAndSave(string(input), 10222, work)
+	// go buildImageAndSave(string(input), 10223, work)
+	// go buildImageAndSave(string(input), 10224, work)
+	// go buildImageAndSave(string(input), 10225, work)
+	// go buildImageAndSave(string(input), 10226, work)
+	go buildImageAndSave(string(input), 10227, work)
+	// go buildImageAndSave(string(input), 10228, work)
+	// go buildImageAndSave(string(input), 10229, work)
+	// go buildImageAndSave(string(input), 10230, work)
+	// go buildImageAndSave(string(input), 10231, work)
+	// go buildImageAndSave(string(input), 10232, work)
+	// go buildImageAndSave(string(input), 10233, work)
+	// go buildImageAndSave(string(input), 10234, work)
+	// go buildImageAndSave(string(input), 10235, work)
+	// go buildImageAndSave(string(input), 10236, work)
+	// go buildImageAndSave(string(input), 10237, work)
+	// go buildImageAndSave(string(input), 10238, work)
+	// go buildImageAndSave(string(input), 10239, work)
+	// go buildImageAndSave(string(input), 10240, work)
+	// go buildImageAndSave(string(input), 3, work)
 
-	}
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	<-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+	// <-work
+
+	// }
 	fmt.Printf("Result (part 1): %v\n", 0)
 }
 
@@ -361,6 +435,12 @@ func buildImageAndSave(input string, secs int, res chan bool) {
 		posX, _ := strconv.ParseInt(strings.Split(strings.Split(lines[i], "/")[0], ",")[0], 10, 64)
 		posY, _ := strconv.ParseInt(strings.Split(strings.Split(lines[i], "/")[0], ",")[1], 10, 64)
 
+		velX, _ := strconv.ParseInt(strings.Split(strings.Split(lines[i], "/")[1], ",")[0], 10, 64)
+		velY, _ := strconv.ParseInt(strings.Split(strings.Split(lines[i], "/")[1], ",")[1], 10, 64)
+
+		posX += velX * int64(secs)
+		posY += velY * int64(secs)
+
 		if int(posX) < minX {
 			minX = int(posX)
 		}
@@ -374,12 +454,6 @@ func buildImageAndSave(input string, secs int, res chan bool) {
 			maxY = int(posY)
 		}
 
-		velX, _ := strconv.ParseInt(strings.Split(strings.Split(lines[i], "/")[1], ",")[0], 10, 64)
-		velY, _ := strconv.ParseInt(strings.Split(strings.Split(lines[i], "/")[1], ",")[1], 10, 64)
-
-		posX += velX * s
-		posY += velY * s
-
 		// fmt.Printf("posX: %v\n", posX)
 		// fmt.Printf("posY: %v\n", posY)
 		// fmt.Printf("velX: %v\n", velX)
@@ -390,8 +464,15 @@ func buildImageAndSave(input string, secs int, res chan bool) {
 		}
 		sky[int(posX)][int(posY)] = "#"
 	}
+
+	// fmt.Printf("minX: %v maxX: %v minY: %v maxY: %v\n", minX, maxX, minY, maxY)
+	// fmt.Printf("%+v\n", sky)
+
+	// Because...
+	maxX, maxY = maxY, maxX
+
 	upleft := image.Point{0, 0}
-	bottomright := image.Point{maxY, maxX}
+	bottomright := image.Point{maxY + 1, maxX + 1}
 	img := image.NewGray(image.Rectangle{upleft, bottomright})
 	progress := 0
 	newProgress := 0
@@ -399,22 +480,25 @@ func buildImageAndSave(input string, secs int, res chan bool) {
 		for i := minY; i <= maxY; i++ {
 			if sky[i][j] == "" {
 				img.Set(i, j, color.White)
+				// fmt.Printf(".")
 			} else {
 				img.Set(i, j, color.Black)
+				// fmt.Printf("#")
 			}
 			newProgress = (((j - minX) * (maxY - minY)) * 100) / ((maxX - minX) * (maxY - minY))
 			if newProgress != progress {
-				fmt.Printf("%d %d%%\n", secs, newProgress)
+				// fmt.Printf("%d %d%%\n", secs, newProgress)
 				progress = newProgress
 			}
 		}
+		// fmt.Printf("\n")
 	}
-	f, err := os.Create(fmt.Sprintf("sky_at_%d.png", secs))
+	f, err := os.Create(fmt.Sprintf("sky_at_%d.jpeg", secs))
 	if err != nil {
 		log.Fatal("can't create file:", err)
 	}
 	var opts jpeg.Options
-	opts.Quality = 80
+	opts.Quality = 100
 	err = jpeg.Encode(f, img, &opts)
 	if err != nil {
 		log.Fatal("can't save image:", err)
