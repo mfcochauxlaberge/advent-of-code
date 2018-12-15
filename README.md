@@ -6,8 +6,4 @@ The Advent of Code is a race, so the code in the repository might not be very cl
 
 # Run
 
-Your editor or Go might complain because the main function is redeclared in each file, but it still works if you simply run a single file at a time.
-
-Example:
-
 `go run 2017/01/01.go`
