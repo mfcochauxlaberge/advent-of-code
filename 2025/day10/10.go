@@ -87,11 +87,11 @@ func main() {
 		fmt.Println()
 	}
 
-	smallest := 1000
+	// smallest := 1000
 
-	for i, m := range machines {
+	// for i, m := range machines {
 
-	}
+	// }
 
 	// largest := 0
 
